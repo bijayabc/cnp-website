@@ -86,13 +86,16 @@ export default function Header() {
               </Link>
             </nav>
 
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 text-white hover:text-accent transition-colors"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <div className="md:hidden flex items-center gap-3">
+              <LanguageToggle />
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="p-2 text-white hover:text-accent transition-colors"
+                aria-label="Toggle menu"
+              >
+                {isOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -138,8 +141,7 @@ export default function Header() {
                     </Link>
                   );
                 })}
-                <div className="mt-4 pt-4 border-t border-white/10 flex flex-col gap-3">
-                  <LanguageToggle />
+                <div className="mt-4 pt-4 border-t border-white/10">
                   <Link href="/contact" className="btn-primary w-full text-center text-sm">
                     Get In Touch
                   </Link>
